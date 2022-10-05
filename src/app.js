@@ -23,7 +23,7 @@ db.authenticate()
 .catch((err)=>console.log(err))
 
 db.sync({ 
-    force:true
+    
 })
 .then(()=>{console.log('Data base synced')
 //*Creacion de tablas
