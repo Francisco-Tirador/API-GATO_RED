@@ -7,9 +7,13 @@ const db=new Sequelize({
     username:variableEntorno.user,
     password:variableEntorno.password,
     database:variableEntorno.database,
-    native: true,
-  ssl: true
-})
+    logging:false,
+    dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+}})
 
 module.exports={
     db
