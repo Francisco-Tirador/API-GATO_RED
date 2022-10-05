@@ -6,7 +6,9 @@ const db=new Sequelize({
     host:variableEntorno.host,
     username:variableEntorno.user,
     password:variableEntorno.password,
-    database:variableEntorno.database
+    database:variableEntorno.database,
+    native: true,
+  ssl: true
 })
 
 module.exports={
