@@ -15,7 +15,7 @@ app.listen(port,()=>{
     console.log(`We are in the port ${port} MIAUUU`)
 })
 
-
+initModels.initModels()  
     
 //? aqui se encientra la coneccion de la base de datos
 db.authenticate()
@@ -28,7 +28,7 @@ db.sync({
 .then(()=>{console.log('Data base synced')
 //*Creacion de tablas
 ,initData()  
-initModels.initModels()   
+ 
 })
 .catch((err)=>console.log(err))
 
