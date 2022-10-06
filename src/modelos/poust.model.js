@@ -26,7 +26,7 @@ const Poust=db.define('Pousts',{
         type:DataTypes.TEXT,
     },
     img:{
-        type:DataTypes.UUID
+        type:DataTypes.STRING
     }
 
 })

@@ -13,7 +13,8 @@ const db=new Sequelize({
           require: true,
           rejectUnauthorized: false,
         },
-}})
+}
+})
 
 module.exports={
     db

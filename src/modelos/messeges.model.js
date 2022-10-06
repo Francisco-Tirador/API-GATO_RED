@@ -13,7 +13,7 @@ const messages=db.define('messeges',{
         type:DataTypes.TEXT,
     },
     img:{
-        type:DataTypes.UUID,
+        type:DataTypes.STRING,
     },
    
     combersationId:{

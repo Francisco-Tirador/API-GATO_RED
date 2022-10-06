@@ -7,7 +7,8 @@ const CreatePoust=async(id,data)=>{
     const xp= await Poust.create({
        ...data,
        id:uuid.v4(),
-       userId:id
+       userId:id,
+       img:data.img
 })
     return xp
 }
@@ -52,7 +53,7 @@ const PoustbyID=async(id)=>{
 const updateMyPouest=async(ide,data,idUser)=>{
     const {id,UserId,...resDATA}=data
     const xp=await Poust.update(resDATA,{
-         where:{user_id:idUser,id:ide},
+         where:{userId:idUser,id:ide},
 })
 
 if(xp[0]===1){
@@ -68,6 +69,7 @@ const deletePoust=async(idUser,ide,)=>{
     const xp=await Poust.destroy({
         where:{id:ide}
     })
+    console.log(xp)
     if(xp===0){
         const PoustXP=await Poust.findOne({
             where:{id:ide}
@@ -80,7 +82,7 @@ const deletePoust=async(idUser,ide,)=>{
   else{
         
         const xp=await Poust.destroy({
-            where:{id:ide,UserId:idUser}
+            where:{id:ide,userId:idUser}
         })
         console.log(xp)
         if(xp===0){
