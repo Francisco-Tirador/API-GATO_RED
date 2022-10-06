@@ -4,13 +4,14 @@ const {db}=require('./utils/DB')
 const initModels= require('./modelos/initModels')
 const Roles = require('./modelos/rol.model')
 const initData = require('./utils/dbDEFAULT')
+const corce=require('cors')
 // //! con esto nos permite documentar
 // const swaggerUi=require('swagger-ui-express')//TODO - cramos un archivo src y cramos la ruta
 //* configuraciones iniciales
 
 const app=express()
 app.use(express.json()) //!Esta configuracion es para activar el req.body
-
+app.use(corce())//! esto de aqui nos deja hacer nuestra api para que todos hagan peticiones
 app.listen(port,()=>{
     console.log(`We are in the port ${port} MIAUUU`)
 })
