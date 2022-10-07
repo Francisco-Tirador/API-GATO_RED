@@ -26,7 +26,10 @@ const Poust=db.define('Pousts',{
         type:DataTypes.TEXT,
     },
     img:{
-        type:DataTypes.STRING
+        type:DataTypes.STRING,
+        validate:{
+            isUrl:true,
+        }
     }
 
 })
