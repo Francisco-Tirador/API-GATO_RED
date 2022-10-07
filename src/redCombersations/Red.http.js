@@ -54,7 +54,7 @@ const upDatecombersation=(req,res)=>{
     const id =req.user.id
     const idParamas=req.params.id
     const data=req.body 
-    if(data.tittle&&data.content){
+    if(data.tittle){
         controls.updateMyCombersation(idParamas,data,id)
         .then(response=>{
             if(response===401){res.status(400).json({message:`this id ${id} is null `})}
