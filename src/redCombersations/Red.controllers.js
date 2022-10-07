@@ -85,7 +85,7 @@ const deleteCombersation=async(idUser,ide,)=>{
                 where:{id:ide}
             })
             const endTo=await redCombersation.destroy({
-                where:{userId:idUser}
+                where:{userId:idUser,combersationId:ide}
             })
             const entMes=await messages.destroy({
                 where:{combersationId:ide}
