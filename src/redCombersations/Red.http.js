@@ -2,7 +2,7 @@ const controls=require('./Red.controllers')
 
 const newRed=(req, res)=>{
 const data=req.body
-if(data.tittle&&data.guestUser){
+if(data.userId&&data.combersationId){
     controls.CreateRED(data)
     .then((response)=>{
         
