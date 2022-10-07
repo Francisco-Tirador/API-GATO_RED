@@ -1,6 +1,7 @@
 const Combersation=require('../modelos/combersation.model')
 const uuid=require('uuid')
 const messages = require('../modelos/messeges.model')
+const users = require('../modelos/user.model')
 
 const CreateCombersation=async(data)=>{
 
@@ -16,7 +17,8 @@ const CreateCombersation=async(data)=>{
 const getMyCombersation=async(id)=>{
     const xp =await Combersation.findAll({
         where:{id:id},
-        include:{model:messages},
+        include:{model:messages   
+        },
     })
         
     return xp
