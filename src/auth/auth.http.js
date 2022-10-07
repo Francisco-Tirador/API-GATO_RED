@@ -15,7 +15,7 @@ const login=(req,res)=>{
             rol:response.RoleId, 
             emeil:response.emeil
         },'Francotirador1235')
-        res.status(200).json({token})
+        res.status(200).json({token,userId:response.id})
        }else{
         res.status(400).json({err:'Las credenciales son incorrectas'})
        }
