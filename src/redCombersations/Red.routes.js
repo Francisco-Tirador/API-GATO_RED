@@ -20,6 +20,7 @@ router.route('/ad/:id')
 router.route('/validation/:id')
 .get(passport.authenticate('jwt',{session:false}),http.Validation)
 
-
+router.route('/validation')
+.post(passport.authenticate('jwt',{session:false}),http.creValidation)
 
 exports.router=router

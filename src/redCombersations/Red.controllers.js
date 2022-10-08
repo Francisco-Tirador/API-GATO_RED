@@ -117,6 +117,7 @@ const createValidation=async(data)=>{
         User2:data.User2,
         Red:data.Red
     })
+    return xp
 }
 
 const getValidation=async(idPrams,idUser)=>{
@@ -145,6 +146,7 @@ module.exports={
     deleteCombersation,
     updateMyCombersation,
     getMyRed,
-    getValidation
+    getValidation,
+    createValidation
  
 }

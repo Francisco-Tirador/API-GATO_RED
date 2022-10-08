@@ -102,12 +102,25 @@ const Validation=(req,res)=>{
     })
 }
 //? //////////////////////////////////////////////////////////////
-
+const creValidation=(req,res)=>{
+    const data=req.data
+    if(data.User1&&data.User2&&data.Red){
+    controls.createValidation(data)
+    .then(response=>{
+        res.status(201).json({response})})
+    .catch(err=>{
+        if(!err.errors){res.status(400).json({message:`this id ${id} does not exist`})}
+        else{ res.status(400).json({err:err.errors[0].message})}
+    })
+}else{ res.status(400).json({message:'missing data'})}
+}
+//? //////////////////////////////////////////////////////////////
 module.exports={
    GETcobersationID,
    newRed,
    deletedCombersation,
    upDatecombersation,
    GETmyRedID,
-   Validation
+   Validation,
+   creValidation
 }
