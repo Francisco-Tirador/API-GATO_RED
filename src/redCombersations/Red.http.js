@@ -92,7 +92,7 @@ const Validation=(req,res)=>{
     const idUser=req.user.id
     controls.getValidation(id,idUser)
     .then(response=>{
-        if(response===false){res.status(400).json({message:`ya existimos `,response})}
+        if(response===false){res.status(200).json({message:`ya existimos `,response})}
         else if(response.length===0){ res.status(200).json({message:`podemos pasar`,response})}
        else {res.status(400).json({message:`this not is your RedCombersation`,response})}
       })
