@@ -93,17 +93,17 @@ const Validation=(req,res)=>{
     controls.getValidation(id,idUser)
     .then(response=>{
         if(response===false){res.status(400).json({message:`ya existimos `,response})}
-        else if(response===0){ res.status(200).json({message:`podemos pasar`})}
+        else if(response.length===0){ res.status(200).json({message:`podemos pasar`,response})}
        else {res.status(400).json({message:`this not is your RedCombersation`,response})}
       })
     .catch(err=>{
-        if(!err.errors){res.status(400).json({message:`this id ${id} does not exist`})}
+        if(!err.errors){res.status(400).json({message:`this id ${id} does not exist`,},console.log(err))}
         else{ res.status(400).json({err:err.errors[0].message})}
     })
 }
 //? //////////////////////////////////////////////////////////////
 const creValidation=(req,res)=>{
-    const data=req.data
+    const data=req.body
     if(data.User1&&data.User2&&data.Red){
     controls.createValidation(data)
     .then(response=>{

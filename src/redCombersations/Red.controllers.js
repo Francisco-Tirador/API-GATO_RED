@@ -122,15 +122,15 @@ const createValidation=async(data)=>{
 
 const getValidation=async(idPrams,idUser)=>{
     const xp=await validation.findAll({
-        where:{User1:idPrams,
-            User2:idUser}
+        where:{User1:idUser,
+            User2:idPrams}
     })
 
 if(xp.length===1){return false}
 else{
     const xp1=await validation.findAll({
-        where:{User1:idUser,
-            User2:idPrams}
+        where:{User1:idPrams,
+            User2:idUser}
     })
     if(xp1.length===1){return false}
     else{return xp}

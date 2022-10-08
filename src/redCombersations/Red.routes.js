@@ -4,6 +4,10 @@ const passport=require('passport')
 const {rolMiddleware}=require('../middleware/rol.middleware')
 require('../middleware/auth.middleware')(passport)
 
+router.route('/validation')
+.post(passport.authenticate('jwt',{session:false}),http.creValidation)
+
+
 router.route('/')
     .post(passport.authenticate('jwt',{session:false}),http.newRed)
 
@@ -20,7 +24,5 @@ router.route('/ad/:id')
 router.route('/validation/:id')
 .get(passport.authenticate('jwt',{session:false}),http.Validation)
 
-router.route('/validation')
-.post(passport.authenticate('jwt',{session:false}),http.creValidation)
 
 exports.router=router
