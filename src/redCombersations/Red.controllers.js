@@ -85,6 +85,9 @@ const deleteCombersation=async(idUser,ide,)=>{
             const end=await Combersations.destroy({
                 where:{id:ide}
             })
+            const fin=await validation.destroy({
+                where:{Red:ide}
+            })
             const endTo=await redCombersation.destroy({
                 where:{userId:idUser,combersationId:ide}
             })

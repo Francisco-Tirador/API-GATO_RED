@@ -16,8 +16,11 @@ const validation=db.define('validations',{
     User2:{
         type:DataTypes.UUID,
         allowNull:false
+    },
+    Red:{
+        type:DataTypes.UUID,
+        allowNull:false
     }
-  
 
 })
 
