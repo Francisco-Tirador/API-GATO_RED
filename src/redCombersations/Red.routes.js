@@ -16,5 +16,10 @@ router.route('/My/:id')
 router.route('/ad/:id')
     .get(passport.authenticate('jwt',{session:false}),http.GETcobersationID)
 
+     
+router.route('/validation/:id')
+.get(passport.authenticate('jwt',{session:false}),http.Validation)
+
+
 
 exports.router=router

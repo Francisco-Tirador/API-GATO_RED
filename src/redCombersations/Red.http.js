@@ -87,6 +87,20 @@ const deletedCombersation=(req,res)=>{
 }
 
 //? //////////////////////////////////////////////////////////////
+const Validation=(req,res)=>{
+    const id=req.params.id
+    const idUser=req.user.id
+    controls.getValidation(id,idUser)
+    .then(response=>{
+        if(response===false){res.status(400).json({message:`ya existimos `,response})}
+        else if(response===0){ res.status(200).json({message:`podemos pasar`})}
+       else {res.status(400).json({message:`this not is your RedCombersation`,response})}
+      })
+    .catch(err=>{
+        if(!err.errors){res.status(400).json({message:`this id ${id} does not exist`})}
+        else{ res.status(400).json({err:err.errors[0].message})}
+    })
+}
 //? //////////////////////////////////////////////////////////////
 
 module.exports={
@@ -94,5 +108,6 @@ module.exports={
    newRed,
    deletedCombersation,
    upDatecombersation,
-   GETmyRedID
+   GETmyRedID,
+   Validation
 }

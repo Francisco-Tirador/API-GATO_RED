@@ -3,6 +3,7 @@ const Combersations=require('../modelos/combersation.model')
 const messages=require('../modelos/messeges.model')
 const uuid=require('uuid')
 const Users = require('../modelos/user.model')
+const validation = require('../modelos/validation.model')
 
 const CreateRED=async(data)=>{
     const users=await Users.findAll({
@@ -105,6 +106,33 @@ const deleteCombersation=async(idUser,ide,)=>{
 
         }
 
+//? //////////////////////////////////////////////////////////////
+const createValidation=async(data)=>{
+    const xp= await validation.create({
+        id:uuid.v4(),
+        User1:data.User1,
+        User2:data.User2,
+        Red:data.Red
+    })
+}
+
+const getValidation=async(idPrams,idUser)=>{
+    const xp=await validation.findAll({
+        where:{User1:idPrams,
+            User2:idUser}
+    })
+
+if(xp.length===1){return false}
+else{
+    const xp1=await validation.findAll({
+        where:{User1:idUser,
+            User2:idPrams}
+    })
+    if(xp1.length===1){return false}
+    else{return xp}
+}
+
+}
 
 //? //////////////////////////////////////////////////////////////
 
@@ -113,6 +141,7 @@ module.exports={
     GetCombersationByid,
     deleteCombersation,
     updateMyCombersation,
-    getMyRed
+    getMyRed,
+    getValidation
  
 }

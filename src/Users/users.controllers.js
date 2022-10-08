@@ -12,6 +12,8 @@ const CreateUser=async(data)=>{
         name:data.name,
         age:data.age,
         emeil:data.emeil,
+        color1:data.color1,
+        color2:data.color2,
         id:uuid.v4(),
         password:hasheoPassword(data.password),
         is_active:true,

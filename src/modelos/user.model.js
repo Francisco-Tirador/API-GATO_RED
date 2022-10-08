@@ -14,6 +14,12 @@ const users=db.define('users',{
         allowNull: false,
         type: DataTypes.UUID
       },
+      color1:{
+        type:DataTypes.STRING
+      },
+      color2:{
+        type:DataTypes.STRING
+      },
     name:{
         allowNull:false,
         type:DataTypes.STRING
