@@ -5,6 +5,7 @@ const { hasheoPassword } = require('../utils/paswordHASHEO')
 const Poust = require('../modelos/poust.model')
 const redCombersation = require('../modelos/redCombersation.model')
 const combersations = require('../modelos/combersation.model')
+const validation = require('../modelos/validation.model')
 
 const CreateUser=async(data)=>{
     const total=await Users.findAll()
@@ -65,7 +66,19 @@ const deleteUser=async(ide)=>{
     const xp=await Users.destroy({
         where:{id:ide}
     })
-   
+   const xp2=await Poust.destroy({
+   where:{ userId:ide}
+   })
+   const xp3=await redCombersation.destroy({
+    where:{userId:ide}
+   })
+   const xp4=await validation.destroy({
+    where:{User1:ide}
+   })
+   const xp5=await validation.destroy({
+    where:{User2:ide}
+   })
+
     return UserXP
 }
 //? //////////////////////////////////////////////////////////////ADMIN

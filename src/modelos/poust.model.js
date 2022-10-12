@@ -17,7 +17,10 @@ const Poust=db.define('Pousts',{
         allowNull:false,
         type:DataTypes.UUID,
        
-    },  
+    },
+    description:{
+        type:DataTypes.TEXT(500)
+    },
     tittle:{
         type:DataTypes.STRING(50),
         allowNull:false,
@@ -27,7 +30,9 @@ const Poust=db.define('Pousts',{
     },
     img:{
         type:DataTypes.STRING,
-        
+        validate:{
+            isUrl:true
+        }
     }
 
 })

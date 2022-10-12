@@ -14,6 +14,9 @@ const users=db.define('users',{
         allowNull: false,
         type: DataTypes.UUID
       },
+      imgPerfil:{
+        type:DataTypes.STRING
+      },
       color1:{
         type:DataTypes.STRING
       },
@@ -22,7 +25,7 @@ const users=db.define('users',{
       },
     name:{
         allowNull:false,
-        type:DataTypes.STRING
+        type:DataTypes.STRING(35)
     },
     age:{ 
         allowNull:false,
