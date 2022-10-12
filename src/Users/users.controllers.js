@@ -13,6 +13,7 @@ const CreateUser=async(data)=>{
         name:data.name,
         age:data.age,
         emeil:data.emeil,
+        imgPerfil:data.imgPerfil,
         color1:data.color1,
         color2:data.color2,
         id:uuid.v4(),

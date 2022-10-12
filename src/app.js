@@ -28,7 +28,7 @@ db.sync({
 })
 .then(()=>{console.log('Data base synced')
 //*Creacion de tablas
-// ,initData()  
+,initData()  
  
 })
 .catch((err)=>console.log(err))
